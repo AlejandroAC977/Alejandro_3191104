@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const paginasRouter = require('./routes/paginas');
-const PORT = 3009;
+const PORT = 3008;
 
 app.use(express.static('public'));
 
