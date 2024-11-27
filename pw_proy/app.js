@@ -2,7 +2,6 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 
-
 const app = express();
 
 //configuracion para el uso peticiones post
@@ -33,21 +32,20 @@ db.connect(err => {
     }
 });
 
-//iniciamos el server
 
-// Iniciar el servidor
-/*
-const port = 3006;
+//const hostname= '192.168.56.1';
+//Iniciar el servidor
+const port = 3009;
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor en funcionamiento desde http://192.168.100.25:${port}`);
+    console.log(`Servidor en funcionamiento desde http://192.168.1.69:${port}`);
 });
-*/
 
-//const hostname= '192.168.3.115';
+/*
 const port = 3006;
 app.listen(port,()=>{
     console.log(`Servidor en funcionamiento desde http://localhost:${port}`);
 });
+*/
 
 //index
 app.get('/', (req, res) => {
@@ -69,7 +67,6 @@ app.get('/add', (req, res) => {
 });
 
 //agregar usuarios
-
 app.post('/add', (req, res) => {
     const { nombre, email, edad, genero, nacion, telefono, escuela } = req.body;
     const query = 'INSERT INTO users (nombre, email, edad, genero, nacion, telefono, escuela) VALUES (?, ?, ?, ?, ?, ?, ?)';
