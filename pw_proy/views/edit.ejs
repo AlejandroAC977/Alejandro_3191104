@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<style>
+    body{
+      background-color: #687fca;
+    }
+
+    input[type=text], select {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=email], select {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+    input[type=number], select {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+    input[type=submit] {
+      width: 40%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .button {
+        background-color: #26a2d3; 
+        border-radius: 12px;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button4 {border-radius: 12px;}
+    .button6 {border-radius: 12px; background-color: rgb(188, 247, 173);}
+      
+    table{
+      background-color: white;
+      border-collapse: collapse;
+    }
+
+    th, td{
+      padding: 10px;
+    }
+    
+
+</style>
+
+<body>
+    <center>
+    <div class="container">
+        <h1>Editar Usuario</h1>
+        
+        <form action="/edit/<%= user.id %>" method="POST">
+            <label for="nombre">Nombre:</label>
+            <br>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="edad">Edad:</label>
+            <br>
+            <input type="number" id="edad" name="edad" required>
+            <br>
+            <label for="genero">Genero:</label>
+            <br>
+            <select id="genero" name="genero">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+              </select>
+            <br>
+            <label for="nacion">Nacion:</label>
+            <br>
+            <select id="nacion" name="nacion">
+                <option value="México">México</option>
+                <option value="Canada">Canada</option>
+                <option value="USA">USA</option>
+              </select>
+            <br>
+            <label for="telefono">Telefono:</label>
+            <br>
+            <input type="number" id="telefono" name="telefono" required>
+            <br>
+            <label for="escuela">Escuela:</label>
+            <br>
+            <input type="text" id="escuela" name="escuela" required><br>
+            <button type="submit" class="button button4">Teminar Edicion</button>
+            <!-- <button type="submit">Agregar</button>-->
+        </form>
+
+        <a href="/" class="button button6">Volver a la lista</a>
+    </div>
+    </center>
+</body>
+</html>
